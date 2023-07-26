@@ -1,0 +1,30 @@
+import random
+import numpy as np
+
+def create_graph(num_nodes, num_edges):
+  # erstellt eine Matrix, in der alle Werte 0 sind
+  graph = np.zeros((num_nodes, num_nodes), dtype = int)
+
+  # wähle zufälig 100 Kanten
+  #edges = np.random.choice(range(num_nodes * (num_nodes - 1) // 2), num_edges, replace=False)
+  edges = np.random.choice(range(num_nodes * (num_nodes - 1) // 2), num_edges, replace=False)
+  
+  for edge in edges:
+    i = 1
+    j = 0
+    k = edge
+    while k >= num_nodes - i:
+        k -= num_nodes - i
+        i += 1
+        j += 1
+    j += k
+
+    random_value = np.random.randint(1, 101)
+    graph[i][j] = random_value
+    graph[j][i] = random_value 
+
+  return graph
+
+
+graph = create_graph(15, 100)
+print(graph)
