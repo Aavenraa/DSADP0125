@@ -1,0 +1,30 @@
+# Aufgabe 1   Lektion 3
+# Verifizieren Sie numerisch für Gauß-verteilte Variablen in Python, dass die Summe
+# von Gauß- verteilten Variablen wieder Gauß-verteilt ist. Wie nennt man diesen Zusammenhang in der Mathe- matik?
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Anzahl der Zufallsvariablen
+n = 1000
+
+# Anzahl der Durchläufe
+num_samples = 10000
+
+# Liste zur Speicherung der Summen
+sums = []
+
+# Generiere num_samples Durchläufe
+for _ in range(num_samples):
+    # Generiere n Gauß-verteilte Zufallszahlen mit Mittelwert 0 und Standardabweichung 1
+    random_numbers = np.random.normal(0, 1, n)
+    # Berechne die Summe der Zufallszahlen
+    total_sum = np.sum(random_numbers)
+    sums.append(total_sum)
+
+# Plotte die Histogramm der Summen
+plt.hist(sums, bins=50, density=True, alpha=0.6, color='b', edgecolor='black')
+plt.xlabel('Summe der Zufallsvariablen')
+plt.ylabel('Häufigkeit')
+plt.title('Histogramm der Summe von Gauß-verteilten Variablen')
+plt.show()
