@@ -1,0 +1,42 @@
+# Aufgabe 5   Lektion 3
+
+# Entwickeln Sie eine Routine in Python, welche die Gewinne aus einer 6 aus 49 Lotterie berechnet. 
+# Wie hoch ist der Anteil, den man im Mittel bei einer Wiederholung von Spieleinsätzen wieder aus der Lotterie zurück erhält? 
+# Wie kann man die Berechnung dieses Anteils noch realistischer gestalten?
+
+from itertools import combinations
+
+def binomial_coefficient(n, k):
+    """Berechnet den Binomialkoeffizienten (n über k)"""
+    if 0 <= k <= n:
+        numerator = 1
+        denominator = 1
+        for t in range(1, min(k, n - k) + 1):
+            numerator *= n
+            denominator *= t
+            n -= 1
+        return numerator // denominator
+    else:
+        return 0
+
+def lottery_winnings(num_matches):
+    """Berechnet die Gewinne für eine bestimmte Anzahl von richtigen Zahlen"""
+    prizes = [0, 0, 0,  10, 100, 1000, 1000000] 
+    return prizes[num_matches]
+
+def average_winnings():
+    total_winnings = 0
+    total_combinations = binomial_coefficient(49, 6)
+
+    for num_matches in range(7):
+        combinations_with_num_matches = binomial_coefficient(6, num_matches) * binomial_coefficient(49 - 6, 6 - num_matches)
+        winnings = lottery_winnings(num_matches)
+        total_winnings += combinations_with_num_matches * winnings
+
+    return total_winnings / total_combinations
+
+average_winnings = average_winnings()
+return_rate = average_winnings / 1  # Der Spieleinsatz beträgt 1 Einheit
+
+print("Durchschnittlicher Gewinn:", average_winnings)
+print("Rückgabeanteil im Mittel:", return_rate)
