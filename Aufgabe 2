@@ -1,0 +1,23 @@
+# Aufgabe 2   Lektion 3
+# Schreiben Sie ein Programm in Python, welches die Kreiszahl π bis auf die zehnte Stelle hinter dem Komma berechnet.
+# Wie lautet die Kreiszahl im Rahmen dieser Genauigkeit?
+
+
+def calculate_pi(precision):
+    pi = 0
+    sign = 1
+
+    for k in range(0, precision):
+        pi += sign / (2*k + 1)
+        sign *= -1
+
+    return 4 * pi
+
+# Genauigkeit auf 10 Stellen hinter dem Komma
+precision = 1000000
+
+# Berechne π mit der angegebenen Genauigkeit
+approximated_pi = calculate_pi(precision)
+
+# Gib das Ergebnis aus
+print("Approximierte Kreiszahl π:", approximated_pi)
