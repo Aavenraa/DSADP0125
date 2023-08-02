@@ -1,0 +1,51 @@
+# Aufgabe 4  Lektion 3
+
+# Schreiben Sie eine Routine in Python, welche die Gewinne eines Teilnehmers an der Lotterie 
+# bei einem drei Türen Problem nach der Monty-Hall Strategie illustriert. 
+# Hinweis: Nutzen Sie dabei die Grundlagen für ein Lotteriesystem nach Monty Hall mit drei Türen, 
+# d. h. die Wahrscheinlichkeits- theorie einer Ziehung nach der Bayesschen Statistik.
+
+
+
+import random
+
+def monty_hall_strategy(num_trials):
+    wins_with_switch = 0
+    wins_without_switch = 0
+
+    for _ in range(num_trials):
+        # Erzeuge eine Liste mit den drei Türen, davon eine mit einem Gewinn
+        doors = ['goat', 'goat', 'car']
+
+        # Mische die Türen
+        random.shuffle(doors)
+
+        # Der Teilnehmer wählt eine zufällige Tür aus
+        participant_choice = random.randint(0, 2)
+
+        # Der Moderator öffnet eine Tür mit einer Ziege (Nicht-Gewinn)
+        for i in range(3):
+            if i != participant_choice and doors[i] == 'goat':
+                monty_choice = i
+                break
+
+        # Die Teilnehmerin wechselt die Tür
+        switch_choice = 3 - participant_choice - monty_choice
+
+        # Überprüfe, ob die Teilnehmerin mit dem Wechsel gewonnen hat
+        if doors[switch_choice] == 'car':
+            wins_with_switch += 1
+
+        # Überprüfe, ob die Teilnehmerin ohne Wechsel gewonnen hat
+        if doors[participant_choice] == 'car':
+            wins_without_switch += 1
+
+    return wins_with_switch, wins_without_switch
+
+num_trials = 10000
+wins_with_switch, wins_without_switch = monty_hall_strategy(num_trials)
+
+print("Gewinne mit Wechsel der Tür:", wins_with_switch)
+print("Gewinne ohne Wechsel der Tür:", wins_without_switch)
+print("Gewinnwahrscheinlichkeit mit Wechsel: {:.2f}%".format(wins_with_switch / num_trials * 100))
+print("Gewinnwahrscheinlichkeit ohne Wechsel: {:.2f}%".format(wins_without_switch / num_trials * 100))
