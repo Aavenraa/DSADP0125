@@ -1,0 +1,43 @@
+# Aufgabe 3   Lekton 3
+# Schreiben Sie eine Routine in Python, welche die Kreiszahl π durch parallele Berechnung approximiert.
+# Berechnen Sie damit die Kreiszahl π bis zur zwölften Stelle hinter dem Komma.
+# Was lässt sich über die Genauigkeit der Berechnung im Vergleich zur der nicht-parallelisierten Berechnung aussagen?
+
+import random
+from multiprocessing import Pool
+
+def calculate_pi_parallel(points):
+    inside_circle = 0
+
+    for _ in range(points):
+        x = random.random()
+        y = random.random()
+        distance = x**2 + y**2
+
+        if distance <= 1:
+            inside_circle += 1
+
+    return inside_circle
+
+def approx_pi_parallel(total_points, num_processes):
+    points_per_process = total_points // num_processes
+
+    with Pool(num_processes) as pool:
+        inside_circle_counts = pool.map(calculate_pi_parallel, [points_per_process] * num_processes)
+
+    total_inside_circle = sum(inside_circle_counts)
+    pi = 4 * total_inside_circle / total_points
+
+    return pi
+
+# Anzahl der zufälligen Punkte für die Approximation
+total_points = 200000000
+
+# Anzahl der parallelen Prozesse
+num_processes = 6
+
+# Berechne π mit paralleler Berechnung
+approximated_pi = approx_pi_parallel(total_points, num_processes)
+
+# Gib das Ergebnis aus
+print("Approximierte Kreiszahl π:", approximated_pi)
