@@ -1,0 +1,40 @@
+# Lektion 4   Aufgabe 1
+# Implementieren Sie einen Algorithmus in Python, welcher die erste Primzahl nach der 25. 
+# Zahl in der Fibonacci-Folge berechnet. Wie lautet diese Primzahl?
+
+
+
+def fibonacci(n):
+  zähler = 3
+  x = 0
+  y = 1
+  z = 0
+  while zähler < n + 1:
+    z = x + y
+    zähler += 1
+    print(z) 
+    x = y
+    y = z
+  else:
+    return z
+
+
+def findprim(z):
+  istprime == False
+
+  while istprime != True:
+    z += 1
+    for i in range(2,z):
+        if (z%i) == 0:
+          istprime == False
+        else:
+          istprime == True
+  else:
+    print("Die erste Primzahl nach der 25. Fibonaccizahl ist ", z)
+
+
+
+print(x,y)
+fibonacci(25)
+
+findprim(z)
