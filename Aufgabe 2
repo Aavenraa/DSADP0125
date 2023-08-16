@@ -1,0 +1,33 @@
+# Aufgabe 2
+
+# Entwickeln Sie eine Routine in Python, welche dem Textstring S = “Eine alte Dame geht heute einkaufen.” 
+# einen Zahlenwert zuordnet, durch die Definition a = b mod 26. Dabei ist b ∈ Z ein Zahlenwert, 
+# welcher den Index der Buchstabenfolge a, b, c, d, ..., bzw. A, B, C, D, ..., 
+# beschreibt und a ∈ Z26 der resultierende Zahlenwert (mod 26) für einen Buchstaben aus dem Textstring S.
+
+
+def letter_to_number(letter):
+    if 'a' <= letter <= 'z':
+        return ord(letter) - ord('a')
+    elif 'A' <= letter <= 'Z':
+        return ord(letter) - ord('A')
+    else:
+        return None
+
+def text_to_numbers(text):
+    numbers = []
+    for letter in text:
+        number = letter_to_number(letter)
+        if number is not None:
+            numbers.append(number)
+    return numbers
+
+def main():
+    text = "Eine alte Dame geht heute einkaufen."
+    numbers = text_to_numbers(text)
+    
+    print("Text:", text)
+    print("Buchstaben-Indizes (mod 26):", numbers)
+
+if __name__ == "__main__":
+    main()
