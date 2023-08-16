@@ -1,0 +1,52 @@
+
+# Aufgabe 4
+# Schreiben Sie ein Programm in der Programmiersprache Python, welches die Häufigkeitsverteilung von Wörtern in einem Textstring berechnet.
+# Die zu suchenden Wörter sollen dabei durch einen Nutzer von außen eingegeben werden und in dem Text gesucht werden,
+# der unter der Domain https://github.com/alexej-schelle/AlgDatPro/ unter dem Dateinamen PythonString.txt zu finden ist.
+
+
+
+
+import requests
+from collections import Counter
+from bs4 import BeautifulSoup
+
+# URL zum Textfile
+url = "https://github.com/alexej-schelle/AlgDatPro/raw/main/PythonString.txt"
+
+# Funktion zur Berechnung der Häufigkeitsverteilung von Wörtern
+def calculate_word_frequency(text):
+    words = text.split()
+    word_frequency = Counter(words)
+    return word_frequency
+
+# Hauptfunktion
+def main():
+    try:
+        # Text von der URL abrufen
+        response = requests.get(url)
+        response.raise_for_status()
+
+        # HTML-Text in Plaintext umwandeln
+        soup = BeautifulSoup(response.content, 'html.parser')
+        text = soup.get_text()
+
+        # Nutzereingabe: Wörter nach denen gesucht werden soll
+        search_words = input("Geben Sie die zu suchenden Wörter kommagetrennt ein: ").split(',')
+
+        # Häufigkeitsverteilung berechnen
+        word_frequency = calculate_word_frequency(text)
+
+        # Ergebnisse ausgeben
+        for word in search_words:
+            cleaned_word = word.strip()
+            frequency = word_frequency[cleaned_word]
+            print(f"Das Wort '{cleaned_word}' kommt {frequency} Mal im Text vor.")
+
+    except requests.exceptions.RequestException as e:
+        print("Fehler beim Abrufen des Texts von der URL:", e)
+    except Exception as e:
+        print("Ein Fehler ist aufgetreten:", e)
+
+if __name__ == "__main__":
+    main()
