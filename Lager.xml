@@ -1,0 +1,121 @@
+<Lager>
+    <Artikel>
+        <Artikelnummer>0001</Artikelnummer>
+        <Bezeichnung>cookie, 100% Akryl, 200g</Bezeichnung>
+        <Farbe>Lila, Pink, Rot</Farbe>
+        <Preis>23,99</Preis>
+        <Bestand>4</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0002</Artikelnummer>
+        <Bezeichnung>cookie, 100% Akryl, 200g</Bezeichnung>
+        <Farbe>Grün, Braun, Gelb</Farbe>
+        <Preis>23,99</Preis>
+        <Bestand>6</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0003</Artikelnummer>
+        <Bezeichnung>cookie, 100% Akryl, 200g</Bezeichnung>
+        <Farbe>Blau, Weiß</Farbe>
+        <Preis>23,99</Preis>
+        <Bestand>3</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0004</Artikelnummer>
+        <Bezeichnung>Manyflower Cotton, 100% Baumwolle, 50g</Bezeichnung>
+        <Farbe>Schwarz</Farbe>
+        <Preis>2</Preis>
+        <Bestand>7</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0005</Artikelnummer>
+        <Bezeichnung>Manyflower Cotton, 100% Baumwolle, 50g</Bezeichnung>
+        <Farbe>Terracotta</Farbe>
+        <Preis>2</Preis>
+        <Bestand>3</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0006</Artikelnummer>
+        <Bezeichnung>Manyflower Cotton, 100% Baumwolle, 50g</Bezeichnung>
+        <Farbe>Bernstein</Farbe>
+        <Preis>2</Preis>
+        <Bestand>1</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0007</Artikelnummer>
+        <Bezeichnung>essentials cotton dk, 100% Baumwolle, 50g</Bezeichnung>
+        <Farbe>Dunkelblau</Farbe>
+        <Preis>4</Preis>
+        <Bestand>10</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0008</Artikelnummer>
+        <Bezeichnung>essentials cotton dk, 100% Baumwolle, 50g</Bezeichnung>
+        <Farbe>Babyblau</Farbe>
+        <Preis>4</Preis>
+        <Bestand>0</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0009</Artikelnummer>
+        <Bezeichnung>essentials cotton dk, 100% Baumwolle, 50g</Bezeichnung>
+        <Farbe>Dunkelgrün</Farbe>
+        <Preis>4</Preis>
+        <Bestand>2</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0010</Artikelnummer>
+        <Bezeichnung>Softcloud Strickgarn, 100% Polyester, 50g</Bezeichnung>
+        <Farbe>Pink</Farbe>
+        <Preis>1</Preis>
+        <Bestand>15</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0011</Artikelnummer>
+        <Bezeichnung>Softcloud Strickgarn, 100% Polyester, 50g</Bezeichnung>
+        <Farbe>Schwarz</Farbe>
+        <Preis>1</Preis>
+        <Bestand>11</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0012</Artikelnummer>
+        <Bezeichnung>Softcloud Strickgarn, 100% Polyester, 50g</Bezeichnung>
+        <Farbe>Weinrot</Farbe>
+        <Preis>1</Preis>
+        <Bestand>7</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0013</Artikelnummer>
+        <Bezeichnung>ScandinaviU Acrylic, 100% Akryl, 100g</Bezeichnung>
+        <Farbe>Hellblau</Farbe>
+        <Preis>2,50</Preis>
+        <Bestand>5</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0014</Artikelnummer>
+        <Bezeichnung>ScandinaviU Acrylic, 100% Akryl, 100g</Bezeichnung>
+        <Farbe>Weiß</Farbe>
+        <Preis>2,50</Preis>
+        <Bestand>2</Bestand>
+    </Artikel>
+    
+    <Artikel>
+        <Artikelnummer>0015</Artikelnummer>
+        <Bezeichnung>ScandinaviU Acrylic, 100% Akryl, 100g</Bezeichnung>
+        <Farbe>Grün</Farbe>
+        <Preis>2,50</Preis>
+        <Bestand>1</Bestand>
+    </Artikel>
+</Lager>
